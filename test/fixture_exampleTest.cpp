@@ -21,7 +21,7 @@ class A{
 };
 
 
-TEST(FixtureTestSuite, OperationTest) {
+TEST(FixtureTestSuite, Operation_Test_True) {
   //Arrange
   C cObj;
   B bObj(&cObj);
@@ -31,7 +31,7 @@ TEST(FixtureTestSuite, OperationTest) {
   ASSERT_TRUE(obj.operation());
 }
 
-TEST(FixtureTestSuite, OperationTest) {
+TEST(FixtureTestSuite, Operation_Test_False) {
   //Arrange
   C cObj;
   B bObj(&cObj);
