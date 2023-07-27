@@ -7,7 +7,7 @@ int divFunc(int numerator, int denominator){
     return numerator/denominator;
 }
 
-class DivFuncTestSuite:public testing::TestWithParam<std::tuple<int, int, int>[>]{
+class DivFuncTestSuite:public testing::TestWithParam<std::tuple<int, int, int>>{
 protected:
     DivFuncTestSuite(){}
     ~DivFuncTestSuite(){}
