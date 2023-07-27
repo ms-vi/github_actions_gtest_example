@@ -39,7 +39,7 @@ class TempSensorFixture:public testing::Test{
     protected:
     //Arrange
     ITempSensor* objUnderTest;
-    TempSensorFixture() :objUnderTest{ createObject<T>() } 
+    TempSensorFixture() :objUnderTest{ createObject<T>() } {}
 };
 
 typedef Types<ModelATempSensor,ModelBTempSensor> Implementations;
@@ -47,5 +47,5 @@ typedef Types<ModelATempSensor,ModelBTempSensor> Implementations;
 TYPED_TEST_SUITE(TempSensorFixture, Implementations);
 
 TYPED_TEST(TempSensorFixture, GetTempTest) {
-	ASSERT_EQ(objUnderTest.getOutSideTemp(),23);
+	ASSERT_EQ(objUnderTest->getOutSideTemp(),23);
 }
