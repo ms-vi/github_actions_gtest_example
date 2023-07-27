@@ -47,5 +47,5 @@ typedef Types<ModelATempSensor,ModelBTempSensor> Implementations;
 TYPED_TEST_SUITE(TempSensorFixture, Implementations);
 
 TYPED_TEST(TempSensorFixture, GetTempTest) {
-	ASSERT_EQ(objUnderTest->getOutSideTemp(),23);
+	ASSERT_EQ(this->objUnderTest->getOutSideTemp(),23);
 }
