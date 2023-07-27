@@ -28,8 +28,8 @@ class AutoTempRegulator{
     ITempSensor* tempSensorPtr;
     public:
     AutoTempRegulator(ITempSensor* address):tempSensorPtr(address){}
-    int regulateTemp(){
-        return this->tempSensorPtr->getOutSideTemp();
+    void regulateTemp(){
+        this->tempSensorPtr->getOutSideTemp();
     }
 };
 
@@ -56,4 +56,14 @@ TYPED_TEST_SUITE(TempSensorFixture, Implementations);
 
 TYPED_TEST(TempSensorFixture, GetTempTest) {
 	ASSERT_EQ(this->objUnderTest->getOutSideTemp(),23);
+}
+
+class FakeTempSensor: public ITempSensor{
+    public:
+    int getOutSideTemp() {return 0;}
+};
+
+TEST(AutoTempRegulatorTestSuite, RegulateTempTest){
+    AutoTempRegulator codeUnderTest(nullptr);
+    codeUnderTest.regulateTemp();
 }
