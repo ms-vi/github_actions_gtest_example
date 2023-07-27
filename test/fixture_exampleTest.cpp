@@ -24,7 +24,7 @@ class A{
 TEST(FixtureTestSuite, OperationTest) {
   //Arrange
   C cObj;
-  B bObj(&cObj)
+  B bObj(&cObj);
   A obj(&bObj);
 
   //Act and Assert
@@ -34,7 +34,7 @@ TEST(FixtureTestSuite, OperationTest) {
 TEST(FixtureTestSuite, OperationTest) {
   //Arrange
   C cObj;
-  B bObj(&cObj)
+  B bObj(&cObj);
   A obj(&bObj);
 
   //Act and Assert
