@@ -3,7 +3,7 @@
 namespace githubActionsGtestExample {
 
   std::string sayHello() {
-    return "Hello world from 'github-actions-gtest-example ' project";
+    return "Hello world from 'G-Test Bosch VHM' project";
   }
 
 
