@@ -62,7 +62,7 @@ class FakeTempSensor: public ITempSensor{
     public:
     int getOutSideTempCallCount = 0;
     int getOutSideTemp() {
-        getOutSideTempCallCount+1;
+        getOutSideTempCallCount+=1;
         return getOutSideTempCallCount;
     }
 };
@@ -71,5 +71,5 @@ TEST(AutoTempRegulatorTestSuite, RegulateTempTest){
     FakeTempSensor mockObj;
     AutoTempRegulator codeUnderTest(&mockObj);
     codeUnderTest.regulateTemp();
-    ASSERT_EQ(mockObj.getOutSideTemp,1);
+    ASSERT_EQ(mockObj.getOutSideTempCallCount,1);
 }
