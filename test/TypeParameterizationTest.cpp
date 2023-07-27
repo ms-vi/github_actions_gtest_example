@@ -50,7 +50,7 @@ class TempSensorFixture:public testing::Test{
     TempSensorFixture() :objUnderTest{ createObject<T>() } {}
 };
 
-typedef Types<ModelATempSensor,ModelBTempSensor, ModelcTempSensor> Implementations;
+typedef Types<ModelATempSensor,ModelBTempSensor, ModelCTempSensor> Implementations;
 
 TYPED_TEST_SUITE(TempSensorFixture, Implementations);
 
