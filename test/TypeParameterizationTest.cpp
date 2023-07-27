@@ -63,7 +63,7 @@ class FakeTempSensor: public ITempSensor{
     int getOutSideTempCallCount = 0;
     int getOutSideTemp() {
         getOutSideTempCallCount+1;
-        return 0;
+        return getOutSideTempCallCount;
     }
 };
 
