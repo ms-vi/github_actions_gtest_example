@@ -25,7 +25,7 @@ INSTANTIATE_TEST_SUITE_P(
     DivFuncTestSuiteParameterExample,
     DivFuncTestSuite,
     ::testing::Values(
-        std::make_tuple(10, 5, 20),
+        std::make_tuple(10, 5, 2),
         std::make_tuple(10, 0, 0),
         std::make_tuple(10, -5, 0)
     )
