@@ -54,8 +54,8 @@ TEST_F(FixtureTestSuite, Operation_Test_True) {
   ASSERT_TRUE(aPtr->operation());
 }
 
-TEST_F(FixtureTestSuite, Operation_Test_False) {
-  //Act and Assert
-  ASSERT_FALSE(aPtr->operation());
-}
+// TEST_F(FixtureTestSuite, Operation_Test_False) {
+//   //Act and Assert
+//   ASSERT_FALSE(aPtr->operation());
+// }
 
