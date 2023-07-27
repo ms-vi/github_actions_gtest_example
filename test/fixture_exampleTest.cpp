@@ -20,24 +20,42 @@ class A{
     }
 };
 
+class FixtureTestSuite: public testing::Test{
+protected:
+    A* aPtr;
+    B* bPtr;
+    C* cPtr;
+    FixtureTestSuite(){
+        //initialization
+    }
+    ~FixtureTestSuite(){
+        //Release the Resources
+    }
+    // You can define per-test set-up logic as usual.
+    void SetUp() override {
+        //Arrange
+        this->cPtr = new C();
+        this->bPtr = new B(cPtr);
+        this->aPtr = new A(bPtr);
+    }
 
-TEST(FixtureTestSuite, Operation_Test_True) {
-  //Arrange
-  C cObj;
-  B bObj(&cObj);
-  A obj(&bObj);
+    // You can define per-test tear-down logic as usual.
+    void TearDown() override {
+        //delete resources
+        delete cPtr;
+        delete bPtr;
+        delete aPtr;
+    }
+};
 
+
+TEST_F(FixtureTestSuite, Operation_Test_True) {
   //Act and Assert
-  ASSERT_TRUE(obj.operation());
+  ASSERT_TRUE(aPtr->operation());
 }
 
-TEST(FixtureTestSuite, Operation_Test_False) {
-  //Arrange
-  C cObj;
-  B bObj(&cObj);
-  A obj(&bObj);
-
+TEST_F(FixtureTestSuite, Operation_Test_False) {
   //Act and Assert
-  ASSERT_FALSE(obj.operation());
+  ASSERT_FALSE(aPtr->operation());
 }
 
